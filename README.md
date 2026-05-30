@@ -2,6 +2,40 @@
 
 Simple Spring Boot web application that serves a static front-end and provides routing endpoints.
 
+## CI/CD Pipeline
+
+This project includes a GitHub Actions workflow at [.github/workflows/ci-cd.yml](.github/workflows/ci-cd.yml).
+
+The pipeline does the following:
+
+- Checks out the code on every push and pull request to `main`.
+- Sets up Java 11 with Maven caching.
+- Runs the test suite with `mvn test`.
+- Builds the application package with `mvn -DskipTests package`.
+- Builds the Docker image with `docker build -t smart-route-finder:ci .`.
+
+The workflow is meant to catch build or test issues before deployment.
+
+## Docker Container
+
+The app is containerized with [Dockerfile](Dockerfile) and [docker-compose.yml](docker-compose.yml).
+
+Use Docker Compose to build and run the container locally:
+
+```powershell
+docker compose up --build
+```
+
+To run it in the background:
+
+```powershell
+docker compose up --build -d
+```
+
+The application will be available at:
+
+- http://localhost:8081/
+
 ## Prerequisites
 
 - Java JDK 11 installed and `JAVA_HOME` set.
@@ -41,6 +75,8 @@ java -jar target/smart-route-finder-1.0.0.jar
 The application listens on port `8081` by default. Open your browser to:
 
 - http://localhost:8081/ — serves the static `index.html` located in `src/main/resources/static`.
+
+If you prefer Docker Compose, use the commands in the Docker Container section above.
 
 ## Run from an IDE
 
