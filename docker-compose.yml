@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: smart-route-finder:latest
+    container_name: smart-route-finder
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
