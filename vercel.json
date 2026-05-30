@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/find-path",
+      "destination": "/api/find-path"
+    }
+  ]
+}

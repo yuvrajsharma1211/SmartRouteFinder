@@ -64,4 +64,4 @@ server.port=8081
 - This project uses Spring Boot 2.7.x and `spring-boot-starter-web`.
 - Artifact produced: `smart-route-finder-1.0.0.jar` (see `pom.xml`).
 
-If you want, I can add a simple `mvnw` wrapper and a small `README` badge. Would you like that?
+
